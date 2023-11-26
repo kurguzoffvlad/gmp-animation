@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "gmp-animation": [
+        "dist/gmp-animation"
+      ],
+      "gmp-animation/*": [
+        "dist/gmp-animation/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

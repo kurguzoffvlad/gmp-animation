@@ -2,5 +2,41 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "gmp-animation": {
+      "projectType": "library",
+      "root": "projects/gmp-animation",
+      "sourceRoot": "projects/gmp-animation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/gmp-animation/tsconfig.lib.json",
+            "project": "projects/gmp-animation/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gmp-animation/src/test.ts",
+            "tsConfig": "projects/gmp-animation/tsconfig.spec.json",
+            "karmaConfig": "projects/gmp-animation/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gmp-animation/tsconfig.lib.json",
+              "projects/gmp-animation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "gmp-animation"
 }
